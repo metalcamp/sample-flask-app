@@ -1,19 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Hello, SmartNinja</title>
-        <link rel="stylesheet" href="/static/css/style.css">
-    </head>
+{% extends "base.html" %}
 
-    <body>
-        <h1>Welcome back!</h1>
-        <h2>This is version 2</h2>
+{% block content %}
 
-        <a href="/about-me">About me</a>
-        <br>
-        <a href="/portfolio">Portfolio</a>
-        <br>
-        <img src="/static/img/logo.png"/>
-    </body>
-</html>
+    <h2>This is index page</h2>
+    <a href="/about-me">About me</a>
+    <a href="/portfolio">Portfolio</a>
+
+    <p>Text from handler: {{ text }}</p>
+    <p>Current year: {{ current_year }}</p>
+
+    {% if cities %}
+        <p>Cities variable exists</p>
+    {% else %}
+        <p>Cities variable does not exist</p>
+    {% endif %}
+
+    {% for city in cities %}
+        <p>{{ city }}</p>
+    {% endfor %}
+{% endblock content %}
