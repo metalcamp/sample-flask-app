@@ -4,6 +4,10 @@
 
     <h2>This is about page</h2>
 
+    {% if name %}
+        <p>Hello, {{ name }}</p>
+    {% endif %}
+
     <form method="post" action="/contact">
         <input type="text" name="contact-name" placeholder="Enter your name">
         <br>
